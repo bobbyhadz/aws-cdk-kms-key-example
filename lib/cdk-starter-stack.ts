@@ -1,4 +1,3 @@
-// import * as iam from '@aws-cdk/aws-iam';
 import * as kms from '@aws-cdk/aws-kms';
 import * as s3 from '@aws-cdk/aws-s3';
 import * as cdk from '@aws-cdk/core';
@@ -15,17 +14,10 @@ export class CdkStarterStack extends cdk.Stack {
       enableKeyRotation: false,
     });
 
-    // key.addToResourcePolicy(
-    //   new iam.PolicyStatement({
-    //     actions: ['kms:Encrypt', 'kms:Decrypt'],
-    //     principals: [new iam.AccountRootPrincipal()],
-    //     resources: ['*'],
-    //   }),
-    // );
-
     const s3Bucket = new s3.Bucket(this, 'my-bucket', {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       encryption: s3.BucketEncryption.KMS,
+      // 👇 encrypt with our KMS key
       encryptionKey: key,
     });
 
