@@ -9,7 +9,7 @@ export class CdkStarterStack extends cdk.Stack {
     const key = new kms.Key(this, 'my-kms-key', {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       pendingWindow: cdk.Duration.days(7),
-      alias: 'alias/my-kms-key',
+      alias: 'alias/mykey',
       description: 'KMS key for encrypting the objects in an S3 bucket',
       enableKeyRotation: false,
     });
