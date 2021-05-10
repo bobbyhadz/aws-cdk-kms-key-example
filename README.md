@@ -1,8 +1,7 @@
-# Article name here
+# KMS Key Example in AWS CDK - Complete Guide
 
 A repository for an article on
-[bobbyhadz.com](https://bobbyhadz.com/blog/aws-s3-presigned-url-react)
-`<- Update Link`
+[bobbyhadz.com](https://bobbyhadz.com/blog/aws-cdk-kms-key-example)
 
 ## How to Use
 
@@ -17,7 +16,8 @@ npm install
 3. Create the CDK stack
 
 ```bash
-npx cdk deploy
+npx cdk deploy \
+  --outputs-file ./cdk-outputs.json
 ```
 
 4. Open the AWS CloudFormation Console and the stack should be created in your
